@@ -5,9 +5,13 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
-from scrapy.conf import settings
+#from scrapy.conf import settings
+from scrapy.utils.project import get_project_settings
 from .items import Music163Item
 from .items import Music163SingerItem
+
+
+settings = get_project_settings()
 
 class Music163Pipeline(object):
     def __init__(self):
